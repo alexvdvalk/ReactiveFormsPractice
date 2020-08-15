@@ -11,9 +11,23 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
 import { SubFieldComponent } from './sub-field/sub-field.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { FormArrayComponent } from './form-array/form-array.component';
+import { UserFormComponent } from './user-form/user-form.component';
+import { UsersTableComponent } from './users-table/users-table.component';
+import { RandomColourDirective } from './random-colour.directive';
+import { MatIconModule } from '@angular/material/icon';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
-  declarations: [AppComponent, SubFieldComponent],
+  declarations: [
+    AppComponent,
+    SubFieldComponent,
+    FormArrayComponent,
+    UserFormComponent,
+    UsersTableComponent,
+    RandomColourDirective,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -24,6 +38,9 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     FlexLayoutModule,
     MatButtonModule,
     MatSlideToggleModule,
+    MatIconModule,
+    MatChipsModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
 import * as faker from 'faker';
 
 @Injectable({
@@ -15,7 +15,7 @@ export class FormService {
       this.fb.group({
         email: [faker.internet.email()],
         message: faker.hacker.noun(),
-        name: [faker.name.findName(), !Validators.required],
+        name: [faker.name.findName()],
         allowed: [Math.random() < 0.5],
       })
     );

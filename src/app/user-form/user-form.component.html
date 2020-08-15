@@ -1,0 +1,33 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+    <mat-form-field appearance="fill">
+        <mat-label>Enter name</mat-label>
+        <input matInput formControlName="username">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Enter age</mat-label>
+        <input type="number" matInput formControlName="age">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary">Add</button>
+
+    <mat-form-field class="example-chip-list">
+        <mat-chip-list formControlName="hobbies" #chipList aria-label="Fruit selection">
+            <mat-chip *ngFor="let fruit of fruits; let i = index" [selectable]="selectable" [removable]="removable" (removed)="remove(i)">
+                {{fruit.name}}
+                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+            </mat-chip>
+            <input placeholder="New fruit..." [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes " [matChipInputAddOnBlur]="addOnBlur " (matChipInputTokenEnd)="add($event) ">
+        </mat-chip-list>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Toppings</mat-label>
+        <mat-select formControlName="toppings" multiple>
+            <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping.name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+</form>
+
+<app-users-table></app-users-table>
